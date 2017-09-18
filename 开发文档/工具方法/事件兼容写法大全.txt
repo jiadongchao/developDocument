@@ -1,0 +1,80 @@
+添加事件
+
+var addEvent = function( obj, type, fn ) {
+  if (obj.addEventListener)
+      obj.addEventListener( type, fn, false );
+  else if (obj.attachEvent) {
+      obj["e"+type+fn] = fn;
+      obj.attachEvent( "on"+type, function() {
+          obj["e"+type+fn].call(obj, window.event);
+      } );
+  }
+};
+
+移除事件
+
+var removeEvent = function( obj, type, fn ) {
+  if (obj.removeEventListener)
+      obj.removeEventListener( type, fn, false );
+  else if (obj.detachEvent) {
+      obj.detachEvent(  "on" +type, obj["e"+type+fn] );
+      obj["e"+type+fn] = null;
+  }
+};
+
+
+阻止事件(包括冒泡和默认行为)
+
+var stopEvent = function(e){
+    e = e || window.event;
+    if(e.preventDefault) {
+      e.preventDefault();
+      e.stopPropagation();
+    }else{
+      e.returnValue = false;
+      e.cancelBubble = true;
+    }
+  },
+
+仅阻止事件冒泡
+
+var stopPropagation = function(e) {
+   e = e || window.event;
+  if (!+"\v1″) {
+     e.cancelBubble = true;
+  } else {
+     e.stopPropagation();
+  }
+}
+
+
+仅阻止浏览器默认行为
+
+var  preventDefault  = function(e) {
+    e = e || window.event;
+    if(e.preventDefault) {
+      e.preventDefault();
+    }else{
+      e.returnValue = false;
+    }
+}
+
+取得事件源对象
+
+ var getEventTarget = function(e){
+   e = e || window.event;
+  var target = event.srcElement ? event.srcElement : event.target;
+  return target;
+}
+
+
+附：绑定onpropertychange事件
+onpropertychange，它在一个元素的属性发生变化的时候触发，一般用在表单元素中捕获其value值改变，它比onchange事件更实时捕获它的改变，不过为微软私有事件。FF大致和它相似的有oninput事件，不过它只针对textfield与textarea的value属性。safari，firefox，chrome与 opera都支持此事件。
+
+ var addPropertyChangeEvent = function (obj,fn) {
+  if(window.ActiveXObject){
+      obj.onpropertychange = fn;
+  }else{
+      obj.addEventListener("input",fn,false);
+  }
+}

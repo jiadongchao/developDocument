@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0}
+body{ height:3003px}
+div{ height:200px; width:200px; padding:30px; margin:20px; background:red; border:10px solid #ccc; overflow:auto}
+
+#box2{ height:100px; width:100px; position:absolute; top:1200px; background:blue; padding:50px}
+#op{ background:#EF8486; height:40px}
+</style>
+</head>
+
+<body>
+<div id="box">
+	<p>内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+</div>
+
+<div id="box2">
+	<p id="op">pppp</p>
+</div>
+
+
+</body>
+</html>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+var oDiv=document.getElementById('box');
+var op=document.getElementById('op');
+
+//浏览器窗口可视区域高度   
+//clientHeight元素内部的高度
+//alert(document.documentElement.clientHeight)
+//alert($(window).height());
+
+//-------------------------------------------------------
+//clientHeight元素内部的高			
+//alert(oDiv.clientHeight)
+//alert($('#box').innerHeight())
+
+//----------------------------------------------------------------
+ //滚动条
+/*window.onscroll=function(){
+	var scrollTop=document.documentElement.scrollTop||document.body.scrollTop ;
+	console.log(scrollTop)
+}
+
+$(window).scroll(function(){
+	var scrollTop=$(window).scrollTop();
+	console.log(scrollTop)
+});
+
+*/
+//----------------------------------------------------------
+/* 
+//DOM元素高度（含边框线）
+alert(oDiv.offsetHeight);
+alert($('#box').outerHeight())
+*/
+
+//DOM元素内容实际高度（不受overflow影响）	
+//alert(oDiv.scrollHeight)
+//alert($('#box').prop("scrollHeight"))
+//------------------------------------------------
+//偏移
+//alert($('#op').position().top);
+//alert(op.offsetTop);
+
+//-----------------------------------------------------------
+//DOM元素相对于文档top
+
+//计算offsetTop
+function offsetTop (obj){ //不包含border
+	var top = obj.offsetTop; 
+	var parent = obj.offsetParent; 
+	while( parent != null ){ 
+		top += parent.offsetTop; 
+		parent = parent.offsetParent; 
+	}; 
+	return top; 
+};
+
+alert($('#box2').offset().top);
+
+alert($('#op').offset().top);//  1200+20+10+50  box2.offsetTop+box2.magin+box2.border+op.offsetTop
+
+alert(offsetTop (op));//不包含border 
+
+
+</script>

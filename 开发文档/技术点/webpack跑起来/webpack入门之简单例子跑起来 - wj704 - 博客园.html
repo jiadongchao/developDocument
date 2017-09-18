@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://www.cnblogs.com/wj204/p/6001559.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>webpack入门之简单例子跑起来 - wj704 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/bundle-CodingLife.css">
+<link type="text/css" rel="stylesheet" href="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/148747.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/bundle-CodingLife-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wj204/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wj204/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wj204/wlwmanifest.xml">
+<script type="text/javascript" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/encoder.js.下载"></script><script src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/jquery.js.下载" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'wj204', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/wj204/"><img id="blogLogo" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/wj204/">Eraser's blog :)</a></h1>
+<h2>好好活，就是做有意义的事
+♪~~((*^o^*)~~♪</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/wj204/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/wj704">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/wj204/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/wj204/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 136&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 291</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/wj204/p/6001559.html">webpack入门之简单例子跑起来</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><h3>webpack介绍</h3>
+<p>　　Webpack是当下最热门的前端资源模块化管理和打包工具，它可以将很多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源，还可以将按需加载的模块进行代码分割，等到实际需要的时候再异步加载。</p>
+<h4>webpack和Grunt以及Gulp相比有什么特性</h4>
+<p>Gulp/Grunt是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack可以替代Gulp/Grunt类的工具。</p>
+<p>Grunt和Gulp的工作方式是：在一个配置文件中，指明对某些文件进行类似编译、组合、压缩等任务的具体步骤。</p>
+<p>webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理它们，最后打包为一个浏览器可识别的JavaScript文件。</p>
+<p><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/504457-20161026174340687-2049180529.png" alt=""></p>
+<p>二者进行比较，Webpack的处理速度更快更直接，能打包更多不同类型的文件。</p>
+<h3>开始使用webpack</h3>
+<p>Node.js是必备的工具，NPM的版本最好是3.x版本以上，NPM 3.x提供了更有效的包依赖管理。</p>
+<p>webpack用npm安装。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">全局安装</span>
+npm install  webpack -<span style="color: #000000;">g
+</span><span style="color: #008000;">//</span><span style="color: #008000;">安装到你的项目目录</span>
+npm install  webpack --save-dev</pre>
+</div>
+<p>1.新建一个文件夹wkdemo，在该文件下&nbsp;npm install webpack --save-dev</p>
+<p><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/504457-20161026175714046-341871004.png" alt=""></p>
+<p>(看得出来应该先建一个package.json文件的(/ □ \)）</p>
+<p>2.package.json文件准备，可以使用<code>npm init</code>命令自动创建这个package.json文件</p>
+<p><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/504457-20161026182344375-1478328544.png" alt=""></p>
+<div class="cnblogs_code" onclick="cnblogs_code_show(&#39;58bd113e-0335-4bfe-b68d-2d6f2aa80ea5&#39;)"><div>按 Ctrl+C 复制代码</div><textarea style="width: 836px; height: 523.2px; font-family: &quot;Courier New&quot;; font-size: 12px; line-height: 1.5;"></textarea><div>按 Ctrl+C 复制代码</div></div>
+<p>3.webpack.config.js文件准备</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show(&#39;9a3ce6b7-fde8-4254-adc9-8c38b2e7464e&#39;)"><div>按 Ctrl+C 复制代码</div><textarea style="width: 836px; height: 506.4px; font-family: &quot;Courier New&quot;; font-size: 12px; line-height: 1.5;"></textarea><div>按 Ctrl+C 复制代码</div></div>
+<p>4.index.html最基础的html代码，它唯一的目的就是加载打包后的js文件（bundle.js），<span style="color: #ff0000;">注意路径对应起来</span></p>
+<div class="cnblogs_code" onclick="cnblogs_code_show(&#39;3a25e099-c0e8-4b5d-97c7-1f1de3193357&#39;)"><img id="code_img_closed_3a25e099-c0e8-4b5d-97c7-1f1de3193357" class="code_img_closed" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/ContractedBlock.gif" alt="" style="display: none;"><img id="code_img_opened_3a25e099-c0e8-4b5d-97c7-1f1de3193357" class="code_img_opened" style="" onclick="cnblogs_code_hide(&#39;3a25e099-c0e8-4b5d-97c7-1f1de3193357&#39;,event)" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/ExpandedBlockStart.gif" alt="">
+<div id="cnblogs_code_open_3a25e099-c0e8-4b5d-97c7-1f1de3193357" class="cnblogs_code_hide" style="display: block;"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">doctype html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html </span><span style="color: #ff0000;">lang</span><span style="color: #0000ff;">="en"</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">charset</span><span style="color: #0000ff;">="utf-8"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>New webpack app<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>
+
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">='root'</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="build/bundle.js"</span><span style="color: #0000ff;">&gt;&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<span class="cnblogs_code_collapse" style="display: none;">View Code</span></div>
+<p>由webpack.config.js文件中：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">页面入口文件配置</span>
+<span style="color: #000000;">    entry: [
+      </span><span style="color: #008000;">//</span><span style="color: #008000;"> 'webpack/hot/only-dev-server',</span>
+      "./js/app.js"<span style="color: #000000;">
+    ],</span></pre>
+</div>
+<p>可以看出需要建一个文件js/app.js作为入口文件。</p>
+<p>5.入口文件app.js准备</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">app.js</span>
+<span style="color: #0000ff;">var</span> greeter = require('./hello.js'<span style="color: #000000;">);
+document.getElementById(</span>'root').appendChild(greeter());</pre>
+</div>
+<p>可以看到这里引用一个同目录下hello.js文件</p>
+<p>6.hello.js文件准备</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008000;">//</span><span style="color: #008000;"> hello.js</span>
+module.exports = <span style="color: #0000ff;">function</span><span style="color: #000000;">() {
+  </span><span style="color: #0000ff;">var</span> greet = document.createElement('div'<span style="color: #000000;">);
+  greet.textContent </span>= "Hi there and greetings! hello world12345"<span style="color: #000000;">;
+  </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> greet;
+};</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>7.执行webpack</p>
+<p>&nbsp;<img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/504457-20161026183714593-626767081.png" alt=""></p>
+<p>8.运行index.html</p>
+<p><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/504457-20161026183849296-2036474423.png" alt=""></p>
+<p>最后看下目录结构为：</p>
+<p><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/504457-20161026190845796-1739203028.png" alt=""></p>
+<p>&nbsp;</p>
+<p>参考：</p>
+<p class="title"><a href="http://www.jianshu.com/p/42e11515c10f#" target="_blank">入门Webpack，看这篇就够了</a></p>
+<p class="title"><a href="http://www.cnblogs.com/skylar/p/React-Webpack-ES6.html" target="_blank">http://www.cnblogs.com/skylar/p/React-Webpack-ES6.html</a></p>
+<p class="title"><a href="http://www.cnblogs.com/vajoy/p/4650467.html" target="_blank">http://www.cnblogs.com/vajoy/p/4650467.html</a></p>
+<p class="title"><a href="http://www.cnblogs.com/tugenhua0707/p/5576262.html" target="_blank">http://www.cnblogs.com/tugenhua0707/p/5576262.html</a></p>
+<p class="title"><a href="http://www.cnblogs.com/keepfool/p/5678427.html" target="_blank">http://www.cnblogs.com/keepfool/p/5678427.html</a></p></div><div id="MySignature" style="display: block;"><div class="note">作者：wj704 &nbsp;&nbsp;
+出处：http://www.cnblogs.com/wj204/  &nbsp;&nbsp;
+</div></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/wj204/category/894837.html" target="_blank">vue</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6001559,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;4c295d9d-e58b-e211-90a7-f6db9189f8ef&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/wj204/" target="_blank"><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/20170515115549.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/wj204/">wj704</a><br>
+            <a href="http://home.cnblogs.com/u/wj204/followees">关注 - 97</a><br>
+            <a href="http://home.cnblogs.com/u/wj204/followers">粉丝 - 179</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;4c295d9d-e58b-e211-90a7-f6db9189f8ef&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6001559,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(6001559,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/wj204/p/5974273.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/wj204/p/5974273.html" title="发布于2016-10-18 17:45">vue中，class、内联style绑定、computed属性</a><br><a href="http://www.cnblogs.com/wj204/p/6031435.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/wj204/p/6031435.html" title="发布于2016-11-08 01:04">一步步构造自己的vue2.0+webpack环境</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2016-10-26 19:13</span> <a href="http://www.cnblogs.com/wj204/">wj704</a> 阅读(<span id="post_view_count">1112</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6001559" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/wj204/p/6001559.html#" onclick="AddToWz(6001559);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=148747,cb_entryId=6001559,cb_blogApp=currentBlogApp,cb_blogUserGuid='4c295d9d-e58b-e211-90a7-f6db9189f8ef',cb_entryCreatedDate='2016/10/26 19:13:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/wj204/p/6001559.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/wj204/p/6001559.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="https://cloud.tencent.com/act/free?fromSource=gwzcw.436817.436817.436817" target="_blank">【力荐】普惠云计算 0门槛体验 30+云产品免费半年</a><br><a href="http://www.gcpowertools.com.cn/products/spreadjs/?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=SpreadJS&amp;utm_campaign=community" target="_blank">【推荐】可嵌入您系统的“在线Excel”！SpreadJS 纯前端表格控件</a><br><a href="http://click.aliyun.com/m/18488/" target="_blank">【推荐】阿里云“全民云计算”优惠升级</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://www.mtyun.com/promote/ab6dceaa-8a4f-45b4-9946-e2fe5564266a/" target="_blank"><img width="300" height="250" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/24442-20170906183359226-1435856414.jpg" alt="美团云0907"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/578082/" target="_blank">360齐向东：企业安全集团目前未有上市计划</a><br> ·  <a href="http://news.cnblogs.com/n/578081/" target="_blank">Facebook测试只向最亲密好友开放的“私人主页”功能</a><br> ·  <a href="http://news.cnblogs.com/n/578080/" target="_blank">特斯拉推出小型充电桩 更适合狭小的空间使用</a><br> ·  <a href="http://news.cnblogs.com/n/578079/" target="_blank">亚马逊全食超市降价助客流量飙升25%</a><br> ·  <a href="http://news.cnblogs.com/n/578078/" target="_blank">任宇昕：融合内容与科技创新 引领数字营销未来</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="https://www.jiguang.cn/devservice?source=bky&amp;hmsr=%E5%8D%9A%E5%AE%A2%E5%9B%AD&amp;hmpl=&amp;hmcu=&amp;hmkw=&amp;hmci=" target="_blank"><img width="468" height="60" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/24442-20170908132742304-1045119416.gif" alt="极光0908"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/575829/" target="_blank">做到这一点，你也可以成为优秀的程序员</a><br> ·  <a href="http://kb.cnblogs.com/page/566880/" target="_blank">写给立志做码农的大学生</a><br> ·  <a href="http://kb.cnblogs.com/page/569057/" target="_blank">架构腐化之谜</a><br> ·  <a href="http://kb.cnblogs.com/page/572854/" target="_blank">学会思考，而不只是编程</a><br> ·  <a href="http://kb.cnblogs.com/page/574767/" target="_blank">编写Shell脚本的最佳实践</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">
+github: <a href="https://github.com/wj704" target="_blank">戳我</a><br>
+SegmentFault: <a href="https://segmentfault.com/u/eraser" target="_blank">戳我</a><br>
+微信公众号：EE点滴 <br>
+扫我：<img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/qrcode.gif">
+</div>
+
+
+
+
+
+
+
+<title>打赏</title>
+
+
+    
+
+    
+
+<div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/wj204/">wj704</a><br>园龄：<a href="http://home.cnblogs.com/u/wj204/" title="入园时间：2013-03-13">4年5个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/wj204/followers/">179</a><br>关注：<a href="http://home.cnblogs.com/u/wj204/followees/">97</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;4c295d9d-e58b-e211-90a7-f6db9189f8ef&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/wj204/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/wj204/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/wj204/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/wj204/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/wj204/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_recentposts" class="sidebar-block">
+<div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/wj204/p/7398676.html">1. 我了解到的JavaScript异步编程</a></li><li><a href="http://www.cnblogs.com/wj204/p/7045068.html">2. 原生JS+Canvas实现五子棋游戏</a></li><li><a href="http://www.cnblogs.com/wj204/p/6932653.html">3. Web缓存相关知识整理</a></li><li><a href="http://www.cnblogs.com/wj204/p/6868375.html">4. 发布自己第一个npm 组件包（基于Vue的文字跑马灯组件）</a></li><li><a href="http://www.cnblogs.com/wj204/p/6777759.html">5. 百度前端技术学院2017学习总结</a></li><li><a href="http://www.cnblogs.com/wj204/p/6576681.html">6. 正则表达式学习总结</a></li><li><a href="http://www.cnblogs.com/wj204/p/6517385.html">7. 微信小程序入门之构建一个简单TODOS应用</a></li><li><a href="http://www.cnblogs.com/wj204/p/6423478.html">8. Vue2.0源码阅读笔记--双向绑定实现原理</a></li><li><a href="http://www.cnblogs.com/wj204/p/6406907.html">9. Vue2.0源码阅读笔记--生命周期</a></li><li><a href="http://www.cnblogs.com/wj204/p/6259655.html">10. 工作总结 vue 城会玩</a></li>
+</ul>
+</div>
+</div><div id="sidebar_categories">
+<div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/wj204/category/612077.html">CSS(8)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/wj204/category/873995.html">HTML(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/wj204/category/611993.html">JavaScript(12)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/wj204/category/641026.html">Node.js(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/wj204/category/894837.html">vue(13)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/wj204/archive/2017/08.html">2017年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/wj204/archive/2017/06.html">2017年6月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/wj204/archive/2017/05.html">2017年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/wj204/archive/2017/03.html">2017年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/wj204/archive/2017/02.html">2017年2月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/wj204/archive/2017/01.html">2017年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/wj204/archive/2016/12.html">2016年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/wj204/archive/2016/11.html">2016年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/wj204/archive/2016/10.html">2016年10月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/wj204/archive/2016/09.html">2016年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/wj204/archive/2016/08.html">2016年8月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/wj204/archive/2016/06.html">2016年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/wj204/archive/2016/01.html">2016年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/wj204/archive/2015/05.html">2015年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/wj204/archive/2015/02.html">2015年2月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/wj204/archive/2014/12.html">2014年12月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/wj204/archive/2014/11.html">2014年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/wj204/archive/2014/10.html">2014年10月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/wj204/archive/2014/08.html">2014年8月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/wj204/archive/2014/07.html">2014年7月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/wj204/archive/2014/03.html">2014年3月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/wj204/archive/2014/02.html">2014年2月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/wj204/archive/2014/01.html">2014年1月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/wj204/archive/2013/12.html">2013年12月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/wj204/archive/2013/11.html">2013年11月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/wj204/archive/2013/10.html">2013年10月 (19)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/wj204/archive/2013/09.html">2013年9月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/wj204/archive/2013/06.html">2013年6月 (14)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/wj204/archive/2013/05.html">2013年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/wj204/archive/2013/04.html">2013年4月 (24)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_scorerank" class="sidebar-block">
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	44820
+	</li>
+	<li class="liRank">
+		排名 -	7161
+	</li>
+</ul>
+</div>
+
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wj204/p/7398676.html#3768621">1. Re:我了解到的JavaScript异步编程</a></li>
+        <li class="recent_comment_body">面对疾风吧</li>
+        <li class="recent_comment_author">--埃斯梅拉达</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wj204/p/7398676.html#3766860">2. Re:我了解到的JavaScript异步编程</a></li>
+        <li class="recent_comment_body">收藏</li>
+        <li class="recent_comment_author">--要有好的心情</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wj204/p/6423478.html#3761441">3. Re:Vue2.0源码阅读笔记--双向绑定实现原理</a></li>
+        <li class="recent_comment_body">请问这个 watcher 是什么时候 赋值给了 Dep.target 的呢？</li>
+        <li class="recent_comment_author">--这个ID起的不算</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wj204/p/6031435.html#3756325">4. Re:一步步构造自己的vue2.0+webpack环境</a></li>
+        <li class="recent_comment_body">赞一个<br>webpack中文文档：<a href="http://www.cnblogs.com/wj204/p/6001559.html" target="_blank"></a></li>
+        <li class="recent_comment_author">--Web媴</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/wj204/p/6031435.html#3756298">5. Re:一步步构造自己的vue2.0+webpack环境</a></li>
+        <li class="recent_comment_body">来个评论支持楼主</li>
+        <li class="recent_comment_author">--小朋友码农</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/wj204/p/5813736.html">1. 前端开发面试题收集(css部分)(10153)</a></li><li><a href="http://www.cnblogs.com/wj204/p/6031435.html">2. 一步步构造自己的vue2.0+webpack环境(9623)</a></li><li><a href="http://www.cnblogs.com/wj204/p/5797651.html">3. json数据格式及json校验格式化工具简单实现(8679)</a></li><li><a href="http://www.cnblogs.com/wj204/p/css3_demo.html">4. 纯CSS3实现的一些酷炫效果(6954)</a></li><li><a href="http://www.cnblogs.com/wj204/p/5119974.html">5. 聊聊自己的2015(2775)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/wj204/p/6031435.html">1. 一步步构造自己的vue2.0+webpack环境(86)</a></li><li><a href="http://www.cnblogs.com/wj204/p/5119974.html">2. 聊聊自己的2015(81)</a></li><li><a href="http://www.cnblogs.com/wj204/p/css3_demo.html">3. 纯CSS3实现的一些酷炫效果(36)</a></li><li><a href="http://www.cnblogs.com/wj204/p/5816455.html">4. 前端开发面试题收集(js部分)(14)</a></li><li><a href="http://www.cnblogs.com/wj204/p/6094796.html">5. Vuex2.0+Vue2.0构建备忘录应用实践(11)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/wj204/p/css3_demo.html">1. 纯CSS3实现的一些酷炫效果(71)</a></li><li><a href="http://www.cnblogs.com/wj204/p/5119974.html">2. 聊聊自己的2015(20)</a></li><li><a href="http://www.cnblogs.com/wj204/p/6031435.html">3. 一步步构造自己的vue2.0+webpack环境(14)</a></li><li><a href="http://www.cnblogs.com/wj204/p/6094796.html">4. Vuex2.0+Vue2.0构建备忘录应用实践(5)</a></li><li><a href="http://www.cnblogs.com/wj204/p/6423478.html">5. Vue2.0源码阅读笔记--双向绑定实现原理(5)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2017 wj704
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+<!--PageEndHtml Block Begin-->
+<script language="javascript" type="text/javascript">
+
+// 生成目录索引列表
+// ref: http://www.cnblogs.com/wangqiguo/p/4355032.html
+// modified by: zzq
+function GenerateContentList()
+{
+    var mainContent = $('#cnblogs_post_body');
+    var h2_list = $('#cnblogs_post_body h2');//如果你的章节标题不是h2,只需要将这里的h2换掉即可
+
+    if(mainContent.length < 1)
+        return;
+ 
+    if(h2_list.length>0)
+    {
+        var content = '<a name="_labelTop"></a>';
+        content += '<div id="navCategory">';
+        content += '<p style="font-size:18px"><b>阅读目录</b></p>';
+        content += '<ul>';
+        for(var i=0; i<h2_list.length; i++)
+        {
+            // var go_to_top = '<div style="text-align: right"><a href="#_labelTop">回到顶部</a><a name="_label' + i + '"></a></div>';
+            // $(h2_list[i]).before(go_to_top);
+            
+            var h3_list = $(h2_list[i]).nextAll("h3");
+            var li3_content = '';
+            for(var j=0; j<h3_list.length; j++)
+            {
+                var tmp = $(h3_list[j]).prevAll('h2').first();
+                if(!tmp.is(h2_list[i]))
+                    break;
+                var li3_anchor = '<a name="_label' + i + '_' + j + '"></a>';
+                $(h3_list[j]).before(li3_anchor);
+                li3_content += '<li><a href="#_label' + i + '_' + j + '">' + $(h3_list[j]).text() + '</a></li>';
+            }
+            
+            var li2_content = '';
+            if(li3_content.length > 0)
+                li2_content = '<li><a href="#_label' + i + '">' + $(h2_list[i]).text() + '</a><ul>' + li3_content + '</ul></li>';
+            else
+                li2_content = '<li><a href="#_label' + i + '">' + $(h2_list[i]).text() + '</a></li>';
+            content += li2_content;
+        }
+        content += '</ul>';
+        // content += '</div><p>&nbsp;</p>';
+        // content += '<p style="font-size:18px"><b>正文</b></p>';
+        // content += '<div class="top-wrap" style="position: fixed;padding:10px; right: 10px; bottom: 10px;"><a href="#top">回到顶部</a></div>';
+       content += '<div class="top-wrap" style="position: fixed;padding:4px; right: 45px; bottom: 5px;z-index:100;"><a href="#top">回到顶部</a></div>';
+        if($('#cnblogs_post_body').length != 0 )
+        {
+            $($('#cnblogs_post_body')[0]).prepend(content);
+        }
+    }   
+}
+
+GenerateContentList();
+</script>
+<!--PageEndHtml Block End-->
+
+
+<link type="text/css" rel="stylesheet" href="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/myRewards.css"><div id="myRewards" class="myRewards"><a class="btn-myRewards" href="javascript:;"><img class="png" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/tab_9.png"></a><div class="myRewards-main"><h1 class="myR-h">喜欢请打赏</h1><div class="myRewardsbox"><div class="myRewards-list"><ul class="not-full"><li class="myR-on"><a href="javascript:;">支付宝<img class="png" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/alipay.png" alt="支付宝"></a></li><li class=""><a href="javascript:;">微信<img class="png" src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/weixin.png" alt="微信"></a></li></ul></div><div class="myRewards-detail"><div class="myRewards-ubox"><p class="myRewards-code-tit">扫描二维码打赏</p><div class="myRewards-code"><img src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/ali.gif"></div><p class="myRewards-account">支付宝打赏</p></div></div></div><p class="myR-bot"><a href="https://github.com/greedying/tctip" target="_blank">了解更多</a></p></div></div><script src="./webpack入门之简单例子跑起来 - wj704 - 博客园_files/index"></script></body></html>
