@@ -47,7 +47,7 @@ define(function(){
         SetCookie: function (name, value) {
             var Days = 30;
             var exp = new Date();
-            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);//1天过期时间
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);//30天过期时间
             document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
         },
         //读取cookie
