@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" Content="text/html;charset=UTF-8"/>
+	<title>识别电脑浏览器和手机浏览器</title>
+</head>
+<script type="text/javascript">
+  var system ={};
+  var p = navigator.platform;
+  system.win = p.indexOf("Win") == 0;
+  system.mac = p.indexOf("Mac") == 0;
+  system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+  if(system.win||system.mac||system.x11){
+//如果是电脑跳转到百度
+    window.location.href="http://www.baidu.com/";
+  }else{
+//如果是手机,跳转到hao123首页
+    window.location.href="http://www.hao123.com/";
+  }
+</script>
+<body>
+</body>
+</html>
