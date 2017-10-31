@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DES加密解密</title>
+	<script src="jquery-1.8.3.min.js"></script>
+	<script src="./cryptojs/core.js" type="text/javascript"></script>
+	<script src="./cryptojs/cipher-core.js" type="text/javascript"></script>
+	<script src="./cryptojs/tripledes.js" type="text/javascript"></script>
+	<script src="./cryptojs/mode-ecb.js" type="text/javascript"></script>
+	<script>
+		$(function () {
+
+      var str1='';
+      var str2 =''
+      $('#btn1').click(function(){
+        var text = $('#import').val();
+
+        str1 = encryptByDES(text); //加密
+        $('#jiami').text(str1)
+			})
+
+      $('#btn2').click(function(){
+        str2 = decryptByDESModeEBC(str1); //解密
+				$('#jiemi').text(str2)
+      })
+
+
+
+      //加密的私钥
+      var key = '12345678';
+      // DES加密
+      function encryptByDES(message) {
+        //把私钥转换成16进制的字符串
+        var keyHex = CryptoJS.enc.Utf8.parse(key);
+        //模式为ECB padding为Pkcs7
+        var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+          mode: CryptoJS.mode.ECB,
+          padding: CryptoJS.pad.Pkcs7
+        });
+        //加密出来是一个16进制的字符串
+        return encrypted.ciphertext.toString();
+
+      }
+      //DES  ECB模式解密
+      function decryptByDESModeEBC(ciphertext) {
+        //把私钥转换成16进制的字符串
+        var keyHex = CryptoJS.enc.Utf8.parse(key);
+        //把需要解密的数据从16进制字符串转换成字符byte数组
+        var decrypted = CryptoJS.DES.decrypt({
+          ciphertext: CryptoJS.enc.Hex.parse(ciphertext)
+        }, keyHex, {
+          mode: CryptoJS.mode.ECB,
+          padding: CryptoJS.pad.Pkcs7
+        });
+        //以utf-8的形式输出解密过后内容
+        var result_value = decrypted.toString(CryptoJS.enc.Utf8);
+        return result_value;
+      }
+
+    })
+
+
+	</script>
+</head>
+<br>
+
+<input type="text" id="import">
+<input type="button" id="btn1" value="加密">
+<div><span>加密后：</span><span id="jiami"></span></div><br><br>
+<input type="button" id="btn2" value="解密">
+<div><span>解密后：</span><span id="jiemi"></span></div>
+
+</body>
+</html>
