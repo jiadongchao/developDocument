@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getType</title>
+</head>
+<body>
+    
+    <script>
+        var num = 0;
+        var boln = true;
+        var obj = {"a":1};
+        var str = "ss";
+        var fun = function(){};
+
+        var n = null;
+        var a = [];
+        var u = undefined;
+        
+
+        // console.log(typeof num)
+        // console.log(typeof boln)
+        // console.log(typeof obj)
+        //console.log(typeof str)
+        // console.log(typeof fun)
+        
+        console.log(typeof n)
+        console.log(typeof a)
+        console.log(typeof obj)
+
+        var untility ={    
+            getType :Object.prototype.toString,
+            
+            isNumber :function(o){
+                return  this.getType.call(o)== "[object Number]";
+            },
+            isBoolean :function(o){
+                return  this.getType.call(o)== "[object Boolean]";
+            }, 
+            isObject :function(o){
+                return  this.getType.call(o)== "[object Object]";
+            }, 
+            isString :function(o){
+                return  this.getType.call(o)== "[object String]";
+            }, 
+            isFunction :function(o){
+                return  this.getType.call(o)== "[object Function]";
+            },
+            isNull :function(o){
+                return  this.getType.call(o)== "[object Null]";
+            }, 
+            isArray :function(o){
+                return  this.getType.call(o)== "[object Array]";
+            },   
+            isUndefined :function(o){
+                return  this.getType.call(o)== "[object Undefined]";
+            },  
+        }
+        // console.log(untility.isNumber(num))
+        // console.log(untility.isBoolean(false)) 
+        // console.log(untility.isObject(obj)) 
+        // console.log(untility.isString(str)) 
+        // console.log(untility.isFunction(fun)) 
+        //console.log(untility.isNull(n)) 
+        // console.log(untility.isArray(a)) 
+        // console.log(untility.isUndefined(uu))  
+
+    </script>
+</body>
+</html>
