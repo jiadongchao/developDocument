@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重</title>
+</head>
+<body>
+    <script>
+        var arry=["a","a","b","c",2,12,12,1,2,1,2,4,12,12,1,2,1,2,4,12,12,1,2,1,2,4,12,12,1,2,1,2,4,12,12,1,2,1,2,4,12,12,1,2,1,2,4,12,12,1,2,1,2,4,12,12,1,2,1,2,4,12,12,1,2,1,2,4,12,12,1,2,1,2,4];
+
+        function unique (arr){
+            var newArr = [];
+            for(var i =0;i<arr.length;i++){
+                if (newArr.indexOf(arr[i]) == -1) {
+                    newArr.push(arr[i]); 
+                }
+            }
+            return newArr
+        };
+
+        function unique2 (a){
+            var obj = {};
+            var newArr = [];
+            for(i=0;i<a.length;i++){
+                if(!obj[a[i]]){
+                   obj[a[i]] = 1;
+                   newArr.push(a[i]);   
+                }
+            }
+            return newArr
+        }
+
+        //console.log( unique2(arry))
+
+        function test(func){
+ 
+            var start = new Date().getTime();//起始时间
+        
+            
+            console.log(arry)
+            var end = new Date().getTime();//接受时间
+            
+            return (end - start)+"ms";//返回函数执行需要时间
+        
+        }
+        console.log( test())
+
+    </script>
+</body>
+</html>
