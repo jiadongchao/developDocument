@@ -1,0 +1,71 @@
+/*弹窗样式 -common
+*
+*start
+*/
+.dialogCommon{z-index:10;width: 100%;height: 100%;display: none;background-color: rgba(0,0,0,0.5);position: absolute;left: 0;top: 0;right: 0;bottom: 0;}
+.dialogCommon .commit_con {  width: 680px;  height: 437px;  text-align: center;  background: #eef4f7 url(../../images/common/tishi_bg.png)no-repeat 0 0;  position: absolute;
+		top: 50%;  left: 50%;  transform: translate(-50%,-50%);  box-shadow: inset 3px 0px 7px 0px rgba(0, 0, 0, 0.3);  }
+.dialogCommon .commit_con_span{		display: inline-block;  margin-top: 16px;  color: #052e3f;  font-size: 30px;}
+.dialogCommon .smDialogtip{ display: inline-block;}
+
+/*上传中*/
+.dialogCommon .uping_wrap{ display: none; position: absolute;  bottom: 180px;  text-align: center;  width: 100%;  }
+.dialogCommon .uping_wrap .smDialogtip {  color: #c1390f;  font-size: 30px;     vertical-align: middle; }
+.dialogCommon .uping_wrap .loadingImg{vertical-align: middle;margin-right: 20px}
+/*上传成功*/
+.dialogCommon .succ_wrap{ display: none;  text-align: center;  width: 100%;  position: absolute;  top: 200px;}
+.dialogCommon .succ_wrap .smDialogtip { font-size: 26px; vertical-align: middle; }
+.dialogCommon .succ_wrap .succImg{vertical-align: middle}
+/*上传失败*/
+.dialogCommon .error_wrap{ display: none;  text-align: center;  width: 100%;  position: absolute;  top: 200px;}
+.dialogCommon .error_wrap .smDialogtip { font-size: 26px; vertical-align: middle; }
+.dialogCommon .error_wrap .errorImg{vertical-align: middle}
+
+
+<!--弹窗 上传中 、成功 、失败-->
+<div class="dialogCommon">
+	<div class="commit_con">
+		<span class="commit_con_span">提示</span>
+		<div class="uping_wrap info_com">
+			<img class="loadingImg" src="../../lib/layui/css/modules/layer/default/loading-2.gif">
+			<p class="smDialogtip">数据提交中...</p>
+		</div>
+		<div class="succ_wrap info_com">
+			<img class="succImg" src="../../images/common/tijiao.png">
+			<span class="smDialogtip">提交成功</span>
+		</div>
+		<div class="error_wrap info_com">
+			<img class="errorImg" src="../../images/common/error.png">
+			<span class="smDialogtip">提交失败</span>
+		</div>
+	</div>
+</div>
+
+
+    /*
+    * 弹窗方法 0上传中 1上传成功 2上传失败
+    *参数
+    * */
+    dialogFn:function(state,nextHtml){
+      //var nextPage = nextHtml || "";
+      var _this = this;
+      $(".dialogCommon").show();
+      $(".info_com").hide();
+      if(state == 0){         //提示上传中
+        $(".uping_wrap").show();
+      }else if(state == 1){   //提示成功
+        $(".succ_wrap").show();
+        var timer=setTimeout(function(){
+          clearInterval(timer);
+          $(".dialogCommon").hide();
+          //_this.goNextPage(nextPage)
+        },1500)
+      }else if(state == 2){   //提示错误
+        $(".error_wrap").show();
+        var timer1=setTimeout(function(){
+          clearInterval(timer1);
+          $(".dialogCommon").hide();
+        },1500)
+      }
+
+    }
